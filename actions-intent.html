@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    RED.nodes.registerType('intent',{
+        category: 'actions on google',
+        color: '#FFFFFF',
+        defaults: {
+            intentName: {value:"",required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "Google_Assistant_logo.svg",
+        label: function() {
+            return this.intentName?'[intent]'+this.intentName:'Intent';
+        },
+        labelStyle:{}
+    });
+</script>
+
+<script type="text/x-red" data-template-name="intent">
+    <div class="form-row">
+        <label for="node-input-intentName"><i class="icon-tag"></i> Intent Name</label>
+        <input type="text" id="node-input-intentName" placeholder="Intent Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="intent">
+    <p>A simple node that converts http post request to conv</p>
+</script>

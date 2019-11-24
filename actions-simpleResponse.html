@@ -1,0 +1,29 @@
+
+<script type="text/x-red" data-template-name="simple-response">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-response"><i class="icon-tag"></i> Response</label>
+        <input type="text" id="node-input-response" placeholder="response">
+    </div>
+</script>
+<script type="text/javascript">
+    RED.nodes.registerType('simple-response',{
+        category: 'actions on google',
+        color: '#FFFFFF',
+        defaults: {
+            name: {value:""},
+            response: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "Google_Assistant_logo.svg",
+        label: function() {
+            return this.name||"simple response";
+        },
+        labelStyle:{}
+    });
+</script>

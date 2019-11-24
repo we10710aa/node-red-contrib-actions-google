@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    RED.nodes.registerType('intent-switch',{
+        category: 'actions on google',
+        color: '#FFFFFF',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "Google_Assistant_logo.svg",
+        label: function() {
+            return this.name||"intent-switch";
+        },
+        labelStyle:{}
+    });
+</script>
+
+<script type="text/x-red" data-template-name="intent-switch">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="intent-switch">
+    <p>A simple node that converts http post request to conv</p>
+</script>
