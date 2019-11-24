@@ -1,5 +1,5 @@
 # node-red-contrib-actions-google
-`Note: For now this library only support Actions on Google with Dialogflow`
+```Note: For now this library only support Actions on Google with Dialogflow```
 Node Red's actions on google library that enable you to use node-red's gui tool build a google assistant chatbot.
 ## Installiation
 
