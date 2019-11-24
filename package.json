@@ -14,10 +14,10 @@
   "license": "ISC",
   "node-red": {
     "nodes": {
-      "actions-intent-switch": "actions-intent-switch.js",
-      "actions-intent" : "actions-intent.js",
-      "actions-simpleRespone" : "actions-simpleResponse.js",
-      "actions-serialize" : "actions-serialize.js"
+      "actions-intent-switch": "src/actions-intent-switch.js",
+      "actions-intent" : "src/actions-intent.js",
+      "actions-simpleRespone" : "src/actions-simpleResponse.js",
+      "actions-serialize" : "src/actions-serialize.js"
     }
   },
   "description": ""
