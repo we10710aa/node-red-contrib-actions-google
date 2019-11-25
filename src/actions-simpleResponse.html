@@ -6,8 +6,13 @@
     </div>
 
     <div class="form-row">
-        <label for="node-input-response"><i class="icon-tag"></i> Response</label>
-        <input type="text" id="node-input-response" placeholder="response">
+        <label for="node-input-text"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-text" placeholder="text">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-speech"><i class="icon-tag"></i> Speech</label>
+        <input type="text" id="node-input-speech" placeholder="speech">
     </div>
 </script>
 <script type="text/javascript">
@@ -16,13 +21,14 @@
         color: '#FFFFFF',
         defaults: {
             name: {value:""},
-            response: {value:""}
+            text: {value:"", required:true},
+            speech:{value:""}
         },
         inputs:1,
         outputs:1,
         icon: "Google_Assistant_logo.svg",
         label: function() {
-            return this.name||"simple response";
+            return this.name||"SimpleResponse";
         },
         labelStyle:{}
     });

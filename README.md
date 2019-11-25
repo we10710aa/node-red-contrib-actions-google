@@ -19,6 +19,8 @@ npm install node-red-contrib-actions-google
 * An Actions on Google project configured and connected to your Dialogflow agent.
 * Configure your Dialogflow agent to use your node-red server as webhook fullfillment.
 
+### Simple Example
+
 Below is a super simple chatbot example with two intents (Deafult Welcome Intent and Default fallback Intent).
 
 ![example png](./example/images/getting-started.png)
@@ -27,7 +29,24 @@ Note that:
 * Use node-red's `http in` and `http response` node to create webhook for Dialogflow agent.
 * Connect `intent switch` node with `intent` node to identify intent.
 * You can use `simple response` node to respond plain text
-* You can also connect intent with `function` node, and access `conv` object through `msg.conv` 
 * You have to connect to `actions serialize` node before http response
 
- 
+ ### Customize Response
+
+You can also connect intent with `function` node, and access `conv` object through `msg.conv` , You can access Actions on Google's Rich Response Object through `global.get('actions-on-google')`, like the code snippet below:
+
+```javascript
+const {BasicCard, Image} = global.get('actions-on-google');
+msg.conv.ask('Hello');
+msg.conv.ask(new BasicCard({
+    title:'Basic Card',
+    text: 'This is basic card',
+    image : new Image({
+        url : 'url to your image',
+        alt : 'image alt text'
+    })
+}))
+return msg;
+```
+
+For more information on Rich Response, you can visit [here]( https://developers.google.com/assistant/conversational/responses ).
