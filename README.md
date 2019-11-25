@@ -1,18 +1,33 @@
 # node-red-contrib-actions-google
 ```
-Note : This library is under extensive development, there will be new change everyday, make sure to come back to check new feature every now and then.
+Note : This library is under rapid development, there will be new change everyday, make sure to come back to check new feature every now and then.
 Feel free to raise issues and feature requests, and if you want to join as contributor, please contact me.
 ```
 ```
 Note : For now this library only support Actions on Google with Dialogflow
 ```
-Node Red's actions on google library that enable you to use node-red's gui tool build a google assistant chatbot.
-## Installiation
+Node Red's Actions on Google library that enable you to use node-red's Gui tool to build a Google assistant chatbot.
+## Installation
 Under your `~/.ndoe-red folder` run the following command:
 ```
 npm install node-red-contrib-actions-google
 ```
 
 ## How to use
-  You'll need to use node-red's `http in` and `http response` nodes to open webhook for dialogflow.
-  ![example png](./example/images/getting-started.png)
+### What you'll need
+
+* An Actions on Google project configured and connected to your Dialogflow agent.
+* Configure your Dialogflow agent to use your node-red server as webhook fullfillment.
+
+Below is a super simple chatbot example with two intents (Deafult Welcome Intent and Default fallback Intent).
+
+![example png](./example/images/getting-started.png)
+
+Note that:
+* Use node-red's `http in` and `http response` node to create webhook for Dialogflow agent.
+* Connect `intent switch` node with `intent` node to identify intent.
+* You can use `simple response` node to respond plain text
+* You can also connect intent with `function` node, and access `conv` object through `msg.conv` 
+* You have to connect to `actions serialize` node before http response
+
+ 
