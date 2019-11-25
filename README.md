@@ -15,4 +15,4 @@ npm install node-red-contrib-actions-google
 
 ## How to use
   You'll need to use node-red's `http in` and `http response` nodes to open webhook for dialogflow.
-  ![example png](https://github.com/we10710aa/node-red-contrib-actions-google/blob/master/example/images/getting-started.png)
+  ![example png](./example/images/getting-started.png)
