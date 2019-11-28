@@ -14,6 +14,7 @@ npm install node-red-contrib-actions-google
 ```
 
 ## How to use
+
 ### What you'll need
 
 * An Actions on Google project configured and connected to your Dialogflow agent.
@@ -31,7 +32,7 @@ Note that:
 * You can use `simple response` node to respond plain text
 * You have to connect to `actions serialize` node before http response
 
- ### Customize Response
+### Customize Response
 
 You can also connect intent with `function` node, and access `conv` object through `msg.conv` , You can access Actions on Google's Rich Response Object through `global.get('actions-on-google')`, like the code snippet below:
 

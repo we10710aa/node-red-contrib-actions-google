@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-actions-google",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "dependencies": {
     "actions-on-google": "^2.12.0"
   },
@@ -22,7 +22,8 @@
       "actions-intent-switch": "src/actions-intent-switch.js",
       "actions-intent": "src/actions-intent.js",
       "actions-simpleRespone": "src/actions-simpleResponse.js",
-      "actions-serialize": "src/actions-serialize.js"
+      "actions-serialize": "src/actions-serialize.js",
+      "actions-suggestions":"src/actions-suggestions.js"
     }
   },
   "description": "Node Red's actions on google library that enable you to use node-red's gui tool build a google assistant chatbot."

@@ -1,0 +1,40 @@
+
+<script type="text/x-red" data-template-name="Suggestions">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-suggestions"><i class="icon-tag"></i> Suggestions</label>
+        <input type="text" id="node-input-suggestions" placeholder="suggestion1,suggestion2...">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Suggestions">
+    <p>Fill out the suggestions with comma seperated string. </p>
+    <p>
+        if msg.suggestions is specified,node will use it instead.
+    </p>
+    <p>
+        example => msg.suggestions:['s1','s2'...]
+    </p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('Suggestions',{
+        category: 'actions on google',
+        color: '#FFFFFF',
+        defaults: {
+            name: {value:""},
+            suggestions: {value:"", required:true},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "Google_Assistant_logo.svg",
+        label: function() {
+            return this.name||"Suggestions";
+        },
+        labelStyle:{}
+    });
+</script>

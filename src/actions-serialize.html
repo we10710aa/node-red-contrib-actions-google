@@ -5,6 +5,13 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
+
+<script type="text/x-red" data-help-name="actions-serialize">
+    <p>Serialize msg and output newMsg that can send back to Dialogflow,
+        You HAVE to connect this node before http response.
+    </p>
+</script>
+
 <script type="text/javascript">
     RED.nodes.registerType('actions-serialize',{
         category: 'actions on google',

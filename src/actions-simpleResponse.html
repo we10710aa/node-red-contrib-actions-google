@@ -15,6 +15,19 @@
         <input type="text" id="node-input-speech" placeholder="speech">
     </div>
 </script>
+
+<script type="text/x-red" data-help-name="simple-response">
+    <p>It seems any response should have at least one simple response,
+        text and speech can be seperated, and if sppech is not specified, it would the same as text.
+    </p>
+    <p>
+        If msg.simpleresponse is specified, node will use it instead.
+    </p>
+    <p>
+        example => {simpleresponse:{text:'text', speech:'speech'}}
+    </p>
+</script>
+
 <script type="text/javascript">
     RED.nodes.registerType('simple-response',{
         category: 'actions on google',

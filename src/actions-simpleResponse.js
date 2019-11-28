@@ -6,11 +6,21 @@ module.exports = function(RED) {
         let node = this;
         this.on('input', (msg, send, done) => {
             send = send || function() {node.send.apply(node, arguments)};
-            const {text,speech} = config;
-            msg.conv.ask(new SimpleResponse({
-                text: text,
-                speech: speech
-            }));
+            const msgtext = msg.simpleresponse && msg.simpleresponse.text;
+            const msgspeech = msg.simpleresponse && msg.simpleresponse.speech;
+            if(msgtext){
+                msg.conv.ask(new SimpleResponse({
+                    text: msgtext,
+                    speech: msgspeech || msgtext
+                }));
+            }
+            else{
+                const {text,speech} = config;
+                msg.conv.ask(new SimpleResponse({
+                    text: text,
+                    speech: speech || text
+                }));
+            }
             send(msg);
         })
     }
