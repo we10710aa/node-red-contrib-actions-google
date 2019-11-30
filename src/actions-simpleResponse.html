@@ -14,11 +14,16 @@
         <label for="node-input-speech"><i class="icon-tag"></i> Speech</label>
         <input type="text" id="node-input-speech" placeholder="speech">
     </div>
+
+    <div class="form-row">
+        <label for="node-input-suggestions"><i class="icon-tag"></i> Suggestions</label>
+        <input type="text" id="node-input-suggestions" placeholder="suggestion1,suggestion2...">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="simple-response">
     <p>It seems any response should have at least one simple response,
-        text and speech can be seperated, and if sppech is not specified, it would the same as text.
+        text and speech can be seperated, and if speech is not specified, it would be the same as text.
     </p>
     <p>
         If msg.simpleresponse is specified, node will use it instead.
@@ -35,7 +40,8 @@
         defaults: {
             name: {value:""},
             text: {value:"", required:true},
-            speech:{value:""}
+            speech:{value:""},
+            suggestions:{value:""}
         },
         inputs:1,
         outputs:1,

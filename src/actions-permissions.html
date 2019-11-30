@@ -1,0 +1,64 @@
+<script type="text/x-red" data-template-name="Permission">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i>Name</label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]common.label.name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-context"><i class="icon-tag"></i> Context</label>
+        <input type="text" id="node-input-context" placeholder="e.g. To know you better">
+    </div>
+    <div class="form-row">
+        <label for="node-input-namepermission"><i class="fa fa-list"></i>Permissions</label>
+        <label for="node-input-namepermission" style="width:70%">
+        <input type="checkbox" id="node-input-namepermission" style="display:inline-block; width:22px; vertical-align:baseline;" value="namepermission">user name
+        </label>
+    </div>
+    <div class="form-row">
+        <label for="node-input-preciselocation"></label>
+        <label for="node-input-preciselocation" style="width:70%">
+        <input type="checkbox" id="node-input-preciselocation" style="display:inline-block; width:22px; vertical-align:baseline;">device percise location
+        </label>
+    </div>
+    <div class="form-row">
+        <label for="node-input-coarselocation"></label>
+        <label for="node-input-coarselocation" style="width:70%">
+        <input type="checkbox" id="node-input-coarselocation" style="display:inline-block; width:22px; vertical-align:baseline;">device coarse location
+        </label>
+    </div>
+    <div class="form-row">
+        <label for="node-input-update"></label>
+        <label for="node-input-update" style="width:70%">
+        <input type="checkbox" id="node-input-update" style="display:inline-block; width:22px; vertical-align:baseline;">update (push notificaton)
+        </label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Permission">
+    <p>You should check if user is verified yourself</p>
+    <p>
+       For more information, you can visit 
+       <a href="https://actions-on-google.github.io/actions-on-google-nodejs/classes/conversation_helper.permission.html">here</a>
+    </p>
+</script>
+
+<script type="text/javascript">
+(function(){
+    RED.nodes.registerType('Permission',{
+        category: 'actions on google',
+        defaults:{
+            name: {value:""},
+            context:{value:"",required:'true'},
+            namepermission: {value:true},
+            preciselocation: {value:false},
+            coarselocation: {value:false},
+            update: {value: false}
+        },
+        label: () => this.name || 'Permission',
+        icon: "Google_Assistant_logo.svg",
+        color: '#FFFFFF',
+        inputs:1,
+        outputs:1
+    })
+
+})();
+</script>
